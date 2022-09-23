@@ -1,35 +1,3 @@
-"dein Scripts-----------------------------
-if &compatible
-	set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/Users/g3ar/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin('/Users/g3ar/.cache/dein')
-
-" Let dein manage dein
-" Required:
-call dein#add('/Users/g3ar/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-" Add or remove your plugins here like this:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-
-" Required:
-call dein#end()
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"ENDIF
-
-"End dein Scripts-------------------------
 
 set runtimepath+=~/.vim
 
@@ -98,13 +66,12 @@ set ffs=unix,dos,mac
 "Set status line
 set laststatus=2
 
+set t_Co=256
 "ColorScheme
 try
 	colorscheme gruvbox
 catch
 endtry
-
-set t_Co=256
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -190,12 +157,9 @@ noremap  <silent> <C-K> :call CommentLine()<CR>
 vnoremap <silent> <C-K> :call RangeCommentLine()<CR>
 
 " key-mappings for un-comment line in normal mode
-noremap  <silent> <C-U> :call UnCommentLine()<CR>
+noremap  <silent> <C-N> :call UnCommentLine()<CR>
 " key-mappings for range un-comment lines in visual <Shift-V> mode
-vnoremap <silent> <C-U> :call RangeUnCommentLine()<CR>
-
-" Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+vnoremap <silent> <C-N> :call RangeUnCommentLine()<CR>
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
@@ -279,11 +243,15 @@ inoremap $q ''<esc>i
 inoremap $e ""<esc>i
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
+" => VimPlug Installation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/forked')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
