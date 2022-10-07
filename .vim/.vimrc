@@ -66,13 +66,12 @@ set ffs=unix,dos,mac
 "Set status line
 set laststatus=2
 
+set t_Co=256
 "ColorScheme
 try
 	colorscheme onehalfdark
 catch
 endtry
-
-set t_Co=256
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -164,8 +163,10 @@ noremap  <silent> <C-M> :call UnCommentLine()<CR>
 " key-mappings for range un-comment lines in visual <Shift-V> mode
 vnoremap <silent> <C-M> :call RangeUnCommentLine()<CR>
 
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
+
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
@@ -260,7 +261,7 @@ inoremap $q ''<esc>i
 inoremap $e ""<esc>i
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
+" => VimPlug Installation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/forked')
 
@@ -269,11 +270,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
-
 Plug 'ryanoasis/vim-devicons'
-
 Plug 'alvan/vim-closetag'
-
 Plug 'leafOfTree/vim-matchtag'
 
 call plug#end()
@@ -293,5 +291,4 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
