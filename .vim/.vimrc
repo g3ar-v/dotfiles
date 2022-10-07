@@ -1,36 +1,3 @@
-"dein Scripts-----------------------------
-if &compatible
-	set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/Users/g3ar/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin('/Users/g3ar/.cache/dein')
-
-" Let dein manage dein
-" Required:
-call dein#add('/Users/g3ar/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-" Add or remove your plugins here like this:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-
-" Required:
-call dein#end()
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"ENDIF
-
-"End dein Scripts-------------------------
-
 set runtimepath+=~/.vim
 
 "Enable Syntax Highlight
@@ -38,6 +5,7 @@ syntax enable
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
+let g:webdevicons_enable_nerdtree = 1
 
 "Set line as cursor in insert mode
 let &t_SI = "\e[6 q"
@@ -100,7 +68,7 @@ set laststatus=2
 
 "ColorScheme
 try
-	colorscheme gruvbox
+	colorscheme onehalfdark
 catch
 endtry
 
@@ -117,6 +85,8 @@ let g:airline#extensions#default#section_truncate_width = {
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline_section_z = '%p%% %l:%v'
 let g:airline_skip_empty_sections = 1
+let g:airline_left_sep = "\uE0C0"
+let g:airline_right_sep = "\uE0b3"
 
 set noshowmode
 set relativenumber
@@ -141,8 +111,8 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => CocConfig
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => CocConfig
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
@@ -156,10 +126,10 @@ execute pathogen#infect()
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"Key-binding
+"" => Moving around, tabs, windows and buffers
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+""Key-binding
 let mapleader=","
 map <leader>sv :source $MYVIMRC<CR>
 
@@ -190,9 +160,9 @@ noremap  <silent> <C-K> :call CommentLine()<CR>
 vnoremap <silent> <C-K> :call RangeCommentLine()<CR>
 
 " key-mappings for un-comment line in normal mode
-noremap  <silent> <C-U> :call UnCommentLine()<CR>
+noremap  <silent> <C-M> :call UnCommentLine()<CR>
 " key-mappings for range un-comment lines in visual <Shift-V> mode
-vnoremap <silent> <C-U> :call RangeUnCommentLine()<CR>
+vnoremap <silent> <C-M> :call RangeUnCommentLine()<CR>
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -265,6 +235,17 @@ if has("autocmd")
 	autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim MatchTag
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:vim_matchtag_enable_by_default = 0
+let g:vim_matchtag_files = '*.html,*.xml,*.js,*.jsx,*.vue,*.svelte,*.jsp'
+
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -284,6 +265,33 @@ inoremap $e ""<esc>i
 call plug#begin('~/.vim/forked')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
+
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'alvan/vim-closetag'
+
+Plug 'leafOfTree/vim-matchtag'
 
 call plug#end()
 
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filetypes = 'html,xhtml,phtml'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+let g:closetag_emptyTags_caseSensitive = 1
+
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
+
+
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')

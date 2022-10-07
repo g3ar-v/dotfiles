@@ -1,42 +1,3 @@
-  # Connect left prompt lines with these symbols. You'll probably want to use the same color
-  # as POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND below.
-  # # Connect right prompt lines with these symbols.
-  # typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX='%242F─╮'
-  # typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX='%242F─┤'
-  # typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX='%242F─╯'
-# vim:ft=zsh ts=2 sw=2 sts=2
-#
-# agnoster's Theme - https://gist.github.com/3712874
-# A Powerline-inspired theme for ZSH
-#
-# # README
-#
-# In order for this theme to render correctly, you will need a
-# [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
-# Make sure you have a recent version: the code points that Powerline
-# uses changed in 2012, and older versions will display incorrectly,
-# in confusing ways.
-#
-# In addition, I recommend the
-# [Solarized theme](https://github.com/altercation/solarized/) and, if you're
-# using it on Mac OS X, [iTerm 2](https://iterm2.com/) over Terminal.app -
-# it has significantly better color fidelity.
-#
-# If using with "light" variant of the Solarized color schema, set
-# SOLARIZED_THEME variable to "light". If you don't specify, we'll assume
-# you're using the "dark" variant.
-#
-# # Goals
-#
-# The aim of this theme is to only show you *relevant* information. Like most
-# prompts, it will only show git information when in a git working directory.
-# However, it goes a step further: everything from the current user and
-# hostname to whether the last call exited with an error to whether background
-# jobs are running in this shell will all be displayed automatically when
-# appropriate.
-
-### Segment drawing
-# A few utility functions to make it easy and re-usable to draw segmented prompts
 
 typeset -g MULTILINE_FIRST_PROMPT_PREFIX='%242F╭─'
 typeset -g MULTILINE_NEWLINE_PROMPT_PREFIX='%242F├─'
@@ -62,7 +23,11 @@ esac
   # what font the user is viewing this source code in. Do not replace the
   # escape sequence with a single literal character.
   # Do not change this! Do not make it '\u2b80'; that is the old, wrong code point.
-  SEGMENT_SEPARATOR=$'\ue0b0'
+  SEGMENT_SEPARATOR=$'\uE0C0' #fiery
+SEGMENT_SEPARATOR1=$'\uE0c4' # lego
+
+#SEGMENT_SEPARATOR=$'\uE0b4'
+
 }
 
 # Begin a segment
@@ -73,7 +38,7 @@ prompt_segment() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
+    echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR1%{$fg%} "
   else
     echo -n "%{$bg%}%{$fg%} "
   fi
@@ -85,7 +50,7 @@ prompt_segment() {
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
     echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
-$MULTILINE_LAST_PROMPT_PREFIX>"
+ $"
   else
     echo -n "%{%k%}"
   fi
@@ -97,7 +62,8 @@ $MULTILINE_LAST_PROMPT_PREFIX>"
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 # Context: user@hostname (who am I and where am I)
-PROMPT='%242F╭─%{%f%b%k%}$(build_prompt)'
+PROMPT='%242F%{%f%b%k%}$(build_prompt)'
+
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
@@ -215,8 +181,8 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  # prompt_segment blue $CURRENT_FG '%~'
-  prompt_segment blue '%~' $(shrink_path -f) 
+  # prompt_segment yellow $CURRENT_FG '%~'
+  prompt_segment white '%~' $(shrink_path -f) 
 }
 
 # Virtualenv: current working virtualenv

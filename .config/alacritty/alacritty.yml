@@ -5,6 +5,8 @@ env:
 #decorations: buttonless
 use_thin_strokes: false
 anti-aliasing: none
+visual_bell.duration: 0
+unfocused_hollow: true
 
 window:
   dimensions:
@@ -404,4 +406,12 @@ cursor:
   style: Block
 
   unfocused_hollow: true
+
+dynamic_title: true
+
+#key bindings
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+
 
