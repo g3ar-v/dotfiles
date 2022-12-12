@@ -12,12 +12,12 @@ ts.setup {
   },
   ensure_installed = {
     "tsx",
-    "toml",
-    "fish",
-    "php",
+    "bash",
+    "python",
+    "latex",
     "json",
     "yaml",
-    "swift",
+    "javascript",
     "css",
     "html",
     "lua"

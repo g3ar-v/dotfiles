@@ -31,6 +31,7 @@ telescope.setup {
           -- your custom normal mode mappings
           ["N"] = fb_actions.create,
           ["h"] = fb_actions.goto_parent_dir,
+          ["r"] = fb_actions.rename,
           ["/"] = function()
             vim.cmd('startinsert')
           end
