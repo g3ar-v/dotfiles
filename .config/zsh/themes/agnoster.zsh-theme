@@ -23,10 +23,10 @@ esac
   # what font the user is viewing this source code in. Do not replace the
   # escape sequence with a single literal character.
   # Do not change this! Do not make it '\u2b80'; that is the old, wrong code point.
-  SEGMENT_SEPARATOR=$'\uE0C0' #fiery
+  # SEGMENT_SEPARATOR=$'\uE0C0' #fiery
 SEGMENT_SEPARATOR1=$'\uE0c4' # lego
 
-#SEGMENT_SEPARATOR=$'\uE0b4'
+SEGMENT_SEPARATOR=$'\uE0b1'
 
 }
 
