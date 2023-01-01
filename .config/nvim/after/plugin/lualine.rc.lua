@@ -1,10 +1,15 @@
 local status, lualine = pcall(require, "lualine")
+local custom_gruvbox = require 'lualine.themes.gruvbox_dark'
 if (not status) then return end
+
+custom_gruvbox.command.a.bg = '#497174'
+-- custom_gruvbox.command.a.bg = '#F3B23E'
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox_dark',
+    -- theme = 'gruvbox_dark',
+    theme = custom_gruvbox,
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}

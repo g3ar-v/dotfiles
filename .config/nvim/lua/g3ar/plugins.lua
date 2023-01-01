@@ -21,16 +21,17 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'neovim/nvim-lspconfig' -- LSP
   use 'tpope/vim-commentary' -- comment handler
-  -- use 'karb94/neoscroll.nvim' -- smooth scrolling
+  use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  use 'wakatime/vim-wakatime' -- Monitor coding time
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip'
   use {
-    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter', -- highlighting, indentation, folding
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   use 'kyazdani42/nvim-web-devicons' -- File icons
