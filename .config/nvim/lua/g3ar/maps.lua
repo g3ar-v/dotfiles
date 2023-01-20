@@ -2,8 +2,9 @@ local keymap = vim.keymap
 
 keymap.set('n', 'x', '"_x')
 -- Save/Quit
-keymap.set('n', ',w', ':w<Return>')
-keymap.set('n', ',q', ':q<Return>')
+keymap.set('n', '<Leader>q', ':q<Return>')
+keymap.set("n", "<leader>Q", "<cmd>qa!<cr>", { silent = true, desc = "quit nvim" })
+keymap.set('n', '<Leader>w', ':w<Return>')
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
@@ -14,14 +15,40 @@ keymap.set('n', '-', '<C-x>')
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- Create new line above
--- keymap.set('n', 'OO', 'O<Esc>j')
+-- Edit and reload nvim config file quickly
+keymap.set("n", "<leader>ev", "<cmd>tabnew $MYVIMRC <bar> tcd %:h<cr>", {
+  silent = true,
+  desc = "open init.lua",
+})
+
+keymap.set("n", "<leader>sv", function()
+  vim.cmd([[
+      update $MYVIMRC
+      source $MYVIMRC
+    ]])
+  vim.notify("Nvim config successfully reloaded!", vim.log.levels.INFO, { title = "nvim-config" })
+end, {
+  silent = true,
+  desc = "reload init.lua",
+})
+
 
 -- Create new line below
--- keymap.set('n', 'oo', 'o<Esc>k')
+keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", {
+  expr = true,
+  desc = "insert line below",
+})
+-- Create new line above
+keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
+  expr = true,
+  desc = "insert line above",
+})
+
+-- Go to start or end of line easier
+keymap.set({ "n", "x" }, "H", "^")
+keymap.set({ "n", "x" }, "L", "g_")
 
 keymap.set('n', '<C-l>', '20zl') -- Scroll horizontally left
-
 keymap.set('n', '<C-h>', '20zh') -- Scroll horizontally right
 
 

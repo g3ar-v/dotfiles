@@ -43,25 +43,25 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 
-vim.keymap.set('n', ',f',
+vim.keymap.set('n', '<Leader>f',
   function()
     builtin.find_files({
       hidden = true
     })
   end)
-vim.keymap.set('n', ',r', function()
+vim.keymap.set('n', '<Leader>r', function()
   builtin.live_grep()
 end)
 vim.keymap.set('n', '\\\\', function()
   builtin.buffers()
 end)
-vim.keymap.set('n', ',t', function()
+vim.keymap.set('n', '<Leader>t', function()
   builtin.help_tags()
 end)
-vim.keymap.set('n', ',,', function()
+vim.keymap.set('n', '<Leader>,', function()
   builtin.resume()
 end)
-vim.keymap.set('n', ',e', function()
+vim.keymap.set('n', '<Leader>e', function()
   builtin.diagnostics()
 end)
 vim.keymap.set("n", "sf", function()

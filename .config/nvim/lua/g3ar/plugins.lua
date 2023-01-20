@@ -8,25 +8,33 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  -- use {
-  -- 'ellisonleao/gruvbox.nvim',
-  -- requires = { 'tjdevries/colorbuddy.nvim' }
-  -- }
+
   use { "ellisonleao/gruvbox.nvim" }
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
-  use 'neovim/nvim-lspconfig' -- LSP
+
+  -- nvim-cmp completion source
+  use { 'hrsh7th/nvim-cmp' } -- Completion
+  use { 'hrsh7th/cmp-nvim-lsp' } -- nvim-cmp source for neovim's built-in LSP
+  use { 'hrsh7th/cmp-buffer' } -- nvim-cmp source for buffer words
+  use { 'hrsh7th/cmp-path' }
+
+  use { 'neovim/nvim-lspconfig' } -- LSP
   use 'tpope/vim-commentary' -- comment handler
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+  use 'rcarriga/nvim-notify' -- Notifications
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'wakatime/vim-wakatime' -- Monitor coding time
+  use {
+    'gelguy/wilder.nvim',
+    config = function()
+      -- config goes here
+    end,
+  }
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip'
@@ -45,8 +53,21 @@ packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
   use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
+  use 'ThePrimeagen/vim-be-good'
+
+  use 'lervag/vimtex'
+  vim.g.vimtex_view_method = 'skim'
+  vim.g.vimtex_view_skim_sync = 1
+  vim.g.vimtex_view_skim_activate = 1
+
+  use({
+    'mrjones2014/dash.nvim',
+    run = 'make install',
+  })
+  use 'skywind3000/asyncrun.vim'
+  use 'github/copilot.vim'
 
   use 'lewis6991/gitsigns.nvim'
+  use { 'tpope/vim-fugitive', config = [[require('.fugitive')]] }
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 end)
