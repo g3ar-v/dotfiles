@@ -129,11 +129,11 @@ unset config_file
 
 # Load the theme
 if [ ! "$ZSH_THEME" = ""  ]; then
-  if [ -f "$ZSH_CUSTOM/$ZSH_THEME.zsh-theme" ]; then
-    source "$ZSH_CUSTOM/$ZSH_THEME.zsh-theme"
-  elif [ -f "$ZSH_CUSTOM/themes/$ZSH_THEME.zsh-theme" ]; then
-    source "$ZSH_CUSTOM/themes/$ZSH_THEME.zsh-theme"
+  if [ -f "$ZSH_CUSTOM/$ZSH_THEME.zsh" ]; then
+    source "$ZSH_CUSTOM/$ZSH_THEME.zsh"
+  elif [ -f "$ZSH_CUSTOM/themes/$ZSH_THEME.zsh" ]; then
+    source "$ZSH_CUSTOM/themes/$ZSH_THEME.zsh"
   else
-    source "$ZSH/themes/$ZSH_THEME.zsh-theme"
+    source "$ZSH/themes/$ZSH_THEME.zsh"
   fi
 fi
