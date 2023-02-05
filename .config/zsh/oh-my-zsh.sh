@@ -52,6 +52,13 @@ for plugin ($plugins); do
     fpath=($ZSH/plugins/$plugin $fpath)
   else
     echo "[oh-my-zsh] plugin '$plugin' not found"
+    if test "$plugin" = "zsh-autosuggestions"; then
+      cd $ZSH/plugins/
+      git clone "https://github.com/zsh-users/zsh-autosuggestions.git"
+    elif test $plugin = "zsh-syntax-highlighting"; then
+      cd $ZSH/plugins/
+      git clone "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    fi
   fi
 done
 

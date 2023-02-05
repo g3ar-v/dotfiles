@@ -85,17 +85,19 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
 elif [[ "$(uname -s)" == 'Linux' ]] ; then
   # GNU/Linux specific code
   #fortune .config/fortune_mod/quotes
-  if ! type "$(exa)" > /dev/null; then
+  if type "$(exa)" > /dev/null; then
     sudo apt install exa
+    sudo apt install tree
   fi
 
   export ZSH=$HOME/.config/zsh
   export EDITOR="nvim"
   export HISTFILE=$HOME/.config/zsh/.zsh_history
   setopt extended_glob
+  bindkey -v
 
   # set default prompt if zsh config can't be found   
- if  [[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"; then
+ # if  [[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"; then
 
     # Set ZSH_CACHE_DIR to the path where cache files should be created
     # or else we will use the default cache/
@@ -113,7 +115,7 @@ elif [[ "$(uname -s)" == 'Linux' ]] ; then
     # Create cache and completions dir and add to $fpath
     mkdir -p "$ZSH_CACHE_DIR/completions"
     (( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
-  fi
+  # fi
 
   ZSH_THEME="agnoster"
 
@@ -126,6 +128,10 @@ elif [[ "$(uname -s)" == 'Linux' ]] ; then
   # Aliases 
   alias ll="exa -l -g --icons"
   alias lla="exa -l -g -a --icons --sort name"
+  alias tree="tree -C"
+  alias g="git"
+  alias gdir='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 else
   # Unknown.
   echo "Unknown OS or Just windows :("  
