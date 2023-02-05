@@ -3,8 +3,8 @@ if (not status) then return end
 
 bufferline.setup({
   options = {
-    mode = "tabs",
-    separator_style = 'slant',
+    mode = "buffers",
+    separator_style = 'thick',
     always_show_bufferline = false,
     show_buffer_close_icons = false,
     show_close_icon = false,
@@ -12,22 +12,19 @@ bufferline.setup({
   },
   highlights = {
     separator = {
-      fg = '#073642',
-      bg = '#002b36',
-    },
-    separator_selected = {
-      fg = '#073642',
+      fg = '#282828',
+      bg = '#1d2021',
     },
     background = {
-      fg = '#657b83',
-      bg = '#002b36'
+      fg = '#A89984',
+      bg = '#282828'
     },
     buffer_selected = {
-      fg = '#fdf6e3',
+      fg = '#fabd2f',
       bold = true,
     },
     fill = {
-      bg = '#073642'
+      bg = '#1d2021'
     }
   },
 })

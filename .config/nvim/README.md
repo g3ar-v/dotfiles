@@ -76,16 +76,6 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 | `<leader>gpu`  | Normal        | Run git push                                                             | vim-fugitive   | Linux/macOS |
 | `<leader>gl`   | Normal/Visual | Get perm link for current/visually-select lines                          | vim-fugitive   | Linux/macOS |
 | `<leader>gb`   | Normal        | Browse current git repo in browser                                       | vim-fugitive   | macOS       |
-| `<F9>`         | Normal        | Compile&run current source file (for C++, LaTeX, Lua, Python)            |                | Linux/macOS |
-| `<F11>`        | Normal        | Toggle spell checking                                                    |                | Linux/macOS |
-| `<F12>`        | Normal        | Toggle paste mode                                                        |                | Linux/macOS |
-| `\x`           | Normal        | Close location or quickfix window                                        |                | Linux/macOS |
-| `\d`           | Normal        | Close current buffer and go to previous buffer                           |                | Linux/macOS |
-| `{count}gb`    | Normal        | Go to buffer `{count}` or next buffer in the buffer list.                |                | Linux/macOS |
-| `{operator}iB` | Normal        | Operate in the whole buffer, `{operator}` can be `v`, `y`, `c`, `d` etc. |                | Linux/macOS |
-| `Alt-k`        | Normal        | Move current line or selected lines up                                   |                | Linux/macOS |
-| `Alt-j`        | Normal        | Move current line or selected lines down                                 |                | Linux/macOS |
-| `Alt-m`        | Normal        | Markdown previewing in system browser                                    |                | macOS       |
 | `Alt-Shift-m`  | Normal        | Stopping Markdown previewing in system browser                           |                | macOS       |
 | `ob`           | Normal/Visual | Open link under cursor or search visual selection                        |                | macOS       |
 | `<Tab>`        | Normal        | Cycle to the next bufferline                                             | bufferline.lua | macOS/linux |

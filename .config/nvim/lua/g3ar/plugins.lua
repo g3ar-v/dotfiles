@@ -60,10 +60,10 @@ packer.startup(function(use)
   vim.g.vimtex_view_skim_sync = 1
   vim.g.vimtex_view_skim_activate = 1
 
-  use({
-    'mrjones2014/dash.nvim',
-    run = 'make install',
-  })
+  -- use({
+  --   'mrjones2014/dash.nvim',
+  --   run = 'make install',
+  -- })
   use 'skywind3000/asyncrun.vim'
   use 'github/copilot.vim'
 
