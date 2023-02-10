@@ -52,7 +52,8 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
   alias tree="tree -C"
   alias g="git"
   alias gdir='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
+  
+  export PATH=/Users/g3ar/minconda/bin/conda:$PATH
   # heroku autocomplete setup
   HEROKU_AC_ZSH_SETUP_PATH=/Users/g3ar/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
@@ -67,14 +68,14 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
 
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/Users/g3ar/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  __conda_setup="$('/Users/g3ar/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
   if [ $? -eq 0 ]; then
       eval "$__conda_setup"
   else
-      if [ -f "/Users/g3ar/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-          . "/Users/g3ar/opt/anaconda3/etc/profile.d/conda.sh"
+      if [ -f "/Users/g3ar/miniconda/profile.d/conda.sh" ]; then
+# . "/Users/g3ar/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
       else
-          export PATH="/Users/g3ar/opt/anaconda3/bin:$PATH"
+          export PATH="/Users/g3ar/miniconda/bin:$PATH"
       fi
   fi
   unset __conda_setup
