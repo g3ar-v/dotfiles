@@ -18,7 +18,7 @@ packer.startup(function(use)
   use { 'hrsh7th/nvim-cmp' } -- Completion
   use { 'hrsh7th/cmp-nvim-lsp' } -- nvim-cmp source for neovim's built-in LSP
   use { 'hrsh7th/cmp-buffer' } -- nvim-cmp source for buffer words
-  use { 'hrsh7th/cmp-path' }
+  use { 'hrsh7th/cmp-path' } -- nvim-cmp source for path completion
 
   use { 'neovim/nvim-lspconfig' } -- LSP
   use 'tpope/vim-commentary' -- comment handler
@@ -35,6 +35,7 @@ packer.startup(function(use)
       -- config goes here
     end,
   }
+  use 'liuchengxu/vista.vim'
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip'
@@ -53,7 +54,6 @@ packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
   use 'akinsho/nvim-bufferline.lua'
-  use 'ThePrimeagen/vim-be-good'
 
   use 'lervag/vimtex'
   vim.g.vimtex_view_method = 'skim'

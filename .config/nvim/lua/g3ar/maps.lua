@@ -21,16 +21,18 @@ keymap.set("n", "<leader>ev", "<cmd>tabnew $MYVIMRC <bar> tcd %:h<cr>", {
   desc = "open init.lua",
 })
 
-keymap.set("n", "<leader>sv", function()
-  vim.cmd([[
-      update $MYVIMRC
-      source $MYVIMRC
-    ]])
-  vim.notify("Nvim config successfully reloaded!", vim.log.levels.INFO, { title = "nvim-config" })
-end, {
-  silent = true,
-  desc = "reload init.lua",
-})
+-- Vista tags
+keymap.set("n", "<leader>v", "<cmd>Vista<cr>", { silent = true })
+-- keymap.set("n", "<leader>sv", function()
+--   vim.cmd([[
+--       update $MYVIMRC
+--       source $MYVIMRC
+--     ]])
+--   vim.notify("Nvim config successfully reloaded!", vim.log.levels.INFO, { title = "nvim-config" })
+-- end, {
+--   silent = true,
+--   desc = "reload init.lua",
+-- })
 
 
 -- Create new line below
