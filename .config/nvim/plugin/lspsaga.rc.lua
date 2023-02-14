@@ -4,10 +4,17 @@ if (not status) then return end
 saga.setup({
   ui = {
     winblend = 10,
+    expand = "",
+    collapse = "",
+    preview = " ",
+    -- code_action = "💡",
+    diagnostic = "🐞",
+    incoming = " ",
+    outgoing = " ",
+    hover = ' ',
+    kind = {},
     border = 'rounded',
-    colors = {
-      normal_bg = '#fabd2f'
-    }
+
   }
 })
 
@@ -20,6 +27,7 @@ vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
 vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 vim.keymap.set('n', 'ga', '<Cmd>Lspsaga code_action<CR>', { silent = true })
+vim.keymap.set('n', 't', '<Cmd>Lspsaga term_toggle<CR>', { silent = true })
 
 -- code action
 local codeaction = require("lspsaga.codeaction")
