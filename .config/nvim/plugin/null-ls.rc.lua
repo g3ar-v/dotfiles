@@ -16,6 +16,11 @@ end
 null_ls.setup {
   sources = {
     -- null_ls.builtins.diagnostics.luacheck,
+    null_ls.builtins.diagnostics.shellcheck,
+    null_ls.builtins.code_actions.shellcheck,
+    null_ls.builtins.code_actions.proselint,
+    null_ls.builtins.diagnostics.proselint,
+    null_ls.builtins.formatting.latexindent,
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.prettier,
     -- null_ls.builtins.formatting.shfmt,
