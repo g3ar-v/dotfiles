@@ -1,15 +1,16 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 if [[ "$(uname -s)" == 'Darwin' ]] ; then
   # Mac OS X specific code
   
   # Fig pre block. Keep at the top of this file.
-  [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   #fortune .config/fortune_mod/quotes
 
   export ZSH=$HOME/.config/zsh
   export EDITOR="nvim"
   export HISTFILE=$HOME/.config/zsh/.zsh_history
+  export OPENAI_API_KEY="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"
   setopt extended_glob
 
 
@@ -34,14 +35,17 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
 
 
   #Java
-  export JAVA_HOME=$(/usr/libexec/java_home -v11)
-  export PATH=$JAVA_HOME/bin:$PATH
+  JAVA=$(/usr/libexec/java_home -v11)
+  export JAVA_HOME=$JAVA
+  PATH=$JAVA_HOME/bin:$PATH
+
+
 
   ZSH_THEME="agnoster"
 
   #for autocompletion
   #zsh-autocomplete
-  plugins=(copypath z zshmarks shrink-path zsh-autosuggestions zsh-syntax-highlighting)
+  plugins=(copypath z zsh-vi-mode zshmarks shrink-path zsh-autosuggestions zsh-syntax-highlighting)
 
   source $ZSH/oh-my-zsh.sh
 
@@ -54,34 +58,33 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
   alias gdir='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
   
   export PATH=/Users/g3ar/minconda/bin/conda:$PATH
-  # heroku autocomplete setup
-  HEROKU_AC_ZSH_SETUP_PATH=/Users/g3ar/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     
   # enable Vim mode
-  bindkey -v
+  # bindkey -v
 
   # Fig post block. Keep at the bottom of this file.
-  [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-  # >>> conda initialize >>>
+    # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('/Users/g3ar/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
   if [ $? -eq 0 ]; then
       eval "$__conda_setup"
   else
       if [ -f "/Users/g3ar/miniconda/profile.d/conda.sh" ]; then
-# . "/Users/g3ar/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
+# . "/Users/g3ar/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize  # commented out by conda initialize
       else
-          export PATH="/Users/g3ar/miniconda/bin:$PATH"
+# export PATH="/Users/g3ar/miniconda/bin:$PATH"  # commented out by conda initialize
       fi
   fi
   unset __conda_setup
   # <<< conda initialize <<<
 
   export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+  #Custom scripts location
+  PATH=$HOME/scripts:$PATH
 
 elif [[ "$(uname -s)" == 'Linux' ]] ; then
   # GNU/Linux specific code
@@ -122,9 +125,9 @@ elif [[ "$(uname -s)" == 'Linux' ]] ; then
 
   #for autocompletion
   #zsh-autocomplete
-  plugins=(copypath z shrink-path zsh-autosuggestions zsh-syntax-highlighting)
+  plugins=(copypath zsh-vi-mode z shrink-path zsh-autosuggestions zsh-syntax-highlighting)
 
-  source $ZSH/oh-my-zsh.sh
+  source "$ZSH/oh-my-zsh.sh"
 
   # Aliases 
   alias ll="exa -l -g --icons"
@@ -137,3 +140,6 @@ else
   # Unknown.
   echo "Unknown OS or Just windows :("  
 fi
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
