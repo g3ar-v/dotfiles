@@ -7,7 +7,7 @@
     </a></p>
 </div>
 
-![nvim screenshot](./images/nvim_scr.jpeg)
+![nvim screenshot](./.config/images/nvim_scr.jpeg)
 
 # My dotfile setup
 
