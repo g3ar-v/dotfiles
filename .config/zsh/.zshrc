@@ -10,7 +10,7 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
   export ZSH=$HOME/.config/zsh
   export EDITOR="nvim"
   export HISTFILE=$HOME/.config/zsh/.zsh_history
-  export OPENAI_API_KEY="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"
+  # export OPENAI_API_KEY="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"
   setopt extended_glob
 
 
@@ -39,20 +39,18 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
   export JAVA_HOME=$JAVA
   PATH=$JAVA_HOME/bin:$PATH
 
-
-
   ZSH_THEME="agnoster"
 
   #for autocompletion
-  #zsh-autocomplete
-  plugins=(copypath z zsh-vi-mode zshmarks shrink-path zsh-autosuggestions zsh-syntax-highlighting)
+  #zsh-autocomplete zsh-syntax-highlighting
+  plugins=(copypath z zsh-vi-mode zshmarks shrink-path zsh-autosuggestions )
 
   source $ZSH/oh-my-zsh.sh
 
   # Aliases
   alias ll="exa -l -g --icons"
   alias lla="exa -l -g -a --icons --sort name"
-  alias c="ssh richard@192.168.100.97"
+  alias connect="ssh richard@192.168.100.97"
   alias tree="tree -C"
   alias g="git"
   alias gdir='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
