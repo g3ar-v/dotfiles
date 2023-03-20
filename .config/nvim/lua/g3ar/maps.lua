@@ -3,6 +3,7 @@ local keymap = vim.keymap
 keymap.set('n', 'x', '"_x')
 -- Save/Quit
 keymap.set('n', '<Leader>q', ':q<Return>')
+keymap.set('n', '<Leader>bd', ':bdelete<Return>')
 keymap.set("n", "<leader>Q", "<cmd>qa!<cr>", { silent = true, desc = "quit nvim" })
 keymap.set('n', '<Leader>w', ':w<Return>')
 -- Increment/decrement

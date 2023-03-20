@@ -4,17 +4,10 @@ if (not status) then return end
 saga.setup({
   ui = {
     winblend = 10,
-    expand = "",
-    collapse = "",
-    preview = " ",
-    -- code_action = "💡",
-    diagnostic = "🐞",
-    incoming = " ",
-    outgoing = " ",
-    hover = ' ',
-    kind = {},
     border = 'rounded',
-
+    colors = {
+      normalbg = '#282828'
+    }
   }
 })
 

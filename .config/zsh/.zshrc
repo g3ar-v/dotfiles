@@ -1,9 +1,9 @@
+  # Mac OS X specific code
+if [[ "$(uname -s)" == 'Darwin' ]] ; then
+  
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-if [[ "$(uname -s)" == 'Darwin' ]] ; then
-  # Mac OS X specific code
-  
-  # Fig pre block. Keep at the top of this file.
+
     eval "$(/opt/homebrew/bin/brew shellenv)"
   #fortune .config/fortune_mod/quotes
 
@@ -59,34 +59,21 @@ if [[ "$(uname -s)" == 'Darwin' ]] ; then
 
 
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-    
-  # enable Vim mode
-  # bindkey -v
-
-  # Fig post block. Keep at the bottom of this file.
-    # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/Users/g3ar/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/Users/g3ar/miniconda/profile.d/conda.sh" ]; then
-# . "/Users/g3ar/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize  # commented out by conda initialize
-      else
-# export PATH="/Users/g3ar/miniconda/bin:$PATH"  # commented out by conda initialize
-      fi
-  fi
-  unset __conda_setup
-  # <<< conda initialize <<<
-
+  
   export PATH="/usr/local/opt/node@14/bin:$PATH"
 
   #Custom scripts location
   PATH=$HOME/scripts:$PATH
 
-elif [[ "$(uname -s)" == 'Linux' ]] ; then
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+
   # GNU/Linux specific code
+elif [[ "$(uname -s)" == 'Linux' ]] ; then
   #fortune .config/fortune_mod/quotes
+  #
+  # ** Not working **
   if type "$(exa)" > /dev/null; then
     sudo apt install exa
     sudo apt install tree
@@ -96,10 +83,9 @@ elif [[ "$(uname -s)" == 'Linux' ]] ; then
   export EDITOR="nvim"
   export HISTFILE=$HOME/.config/zsh/.zsh_history
   setopt extended_glob
-  bindkey -v
 
   # set default prompt if zsh config can't be found   
- # if  [[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"; then
+   [[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"
 
     # Set ZSH_CACHE_DIR to the path where cache files should be created
     # or else we will use the default cache/
@@ -133,11 +119,15 @@ elif [[ "$(uname -s)" == 'Linux' ]] ; then
   alias tree="tree -C"
   alias g="git"
   alias gdir='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+  alias meconfig='mycroft-config edit user'
+  alias mra='$HOME/Documents/trevor-core/start-mycroft.sh all restart'
+  alias mrs='$HOME/Documents/trevor-core/start-mycroft.sh skills restart'
+  alias mraudio='$HOME/Documents/trevor-core/start-mycroft.sh audio restart'
 
+  # source $HOME/Documents/trevor-core/venv-activate.sh -q
 else
   # Unknown.
   echo "Unknown OS or Just windows :("  
 fi
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+

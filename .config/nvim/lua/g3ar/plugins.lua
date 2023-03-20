@@ -29,12 +29,12 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'wakatime/vim-wakatime' -- Monitor coding time
-  use {
-    'gelguy/wilder.nvim',
-    config = function()
-      -- config goes here
-    end,
-  }
+  -- use {
+  --   'gelguy/wilder.nvim',
+  --   config = function()
+  --     -- config goes here
+  --   end,
+  -- }
   use 'liuchengxu/vista.vim'
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
@@ -53,6 +53,7 @@ packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
+  vim.g.mkdp_browser = '/usr/bin/firefox'
   use 'akinsho/nvim-bufferline.lua'
 
   use 'lervag/vimtex'
@@ -64,7 +65,14 @@ packer.startup(function(use)
   --   'mrjones2014/dash.nvim',
   --   run = 'make install',
   -- })
-  use 'skywind3000/asyncrun.vim'
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  }
+  -- use 'skywind3000/asyncrun.vim'
   use 'github/copilot.vim'
 
   use 'lewis6991/gitsigns.nvim'

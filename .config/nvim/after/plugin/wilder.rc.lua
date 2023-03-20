@@ -2,10 +2,10 @@ local status, wilder = pcall(require, 'wilder')
 
 wilder.setup({
   modes = { ':', '/', '?' },
-  next_key = '<Tab>',
-  prev_key = '<S-Tab>',
-  accept_key = '<Down>',
-  reject_key = '<Up>',
+  next_key = '<Down>',
+  prev_key = '<Up>',
+  accept_key = '<Tab>',
+  reject_key = '<S-Tab>',
   -- ['*'] = {
   -- Enable the default wilder.vim search mode
   -- This is the default mode, so it's not strictly necessary to add it
@@ -43,5 +43,4 @@ wilder.set_option('renderer', wilder.renderer_mux({
     left = '[History] ',
     right = ' ',
   }),
-
 }))
