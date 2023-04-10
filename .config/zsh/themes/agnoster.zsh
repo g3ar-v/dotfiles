@@ -180,6 +180,8 @@ prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path ]]; then
     prompt_segment black blue "`(basename $virtualenv_path)`"
+  elif [[ -n $CONDA_DEFAULT_ENV ]]; then
+    prompt_segment black blue "`(basename $CONDA_DEFAULT_ENV)`"
   fi
 }
 
