@@ -41,7 +41,7 @@ module.exports = {
     // custom CSS to embed in the main window
     css: "",
     // custom CSS to embed in the terminal window
-    termCSS: `x-screen x-row { font-variant-ligatures: initial; }`,
+    // termCSS: `x-screen x-row { font-variant-ligatures: initial; }`,
     // set custom startup directory (must be an absolute path)
     workingDirectory: "",
     // if you're using a Linux setup which show native menus, set to false
@@ -153,4 +153,4 @@ module.exports = {
     // 'window:devtools': 'cmd+alt+o',
   },
 };
-//# sourceMappingURL=config-default.js.map
+// # sourceMappingURL=config-default.js.map

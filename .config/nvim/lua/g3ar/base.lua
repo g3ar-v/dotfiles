@@ -31,6 +31,7 @@ vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.g.mapleader = ',' -- Set leader key to comma
 vim.g.localleader = ',' -- Set local leader key to comma
+vim.g.loaded_python3_provide = 0
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])

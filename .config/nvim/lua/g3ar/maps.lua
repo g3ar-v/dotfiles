@@ -75,7 +75,7 @@ keymap.set('n', ',n', ':bn<Return>')
 keymap.set('n', ',p', ':bp<Return>')
 
 -- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
+keymap.set('n', '<C-w><left>', '<C-w>10<')
+keymap.set('n', '<C-w><right>', '<C-w>10>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')

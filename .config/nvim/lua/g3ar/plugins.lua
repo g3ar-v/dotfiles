@@ -11,21 +11,21 @@ packer.startup(function(use)
 
   use { "ellisonleao/gruvbox.nvim" }
   use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'nvim-lua/plenary.nvim' -- Common utilities
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
+  use 'nvim-lua/plenary.nvim'     -- Common utilities
+  use 'onsails/lspkind-nvim'      -- vscode-like pictograms
 
   -- nvim-cmp completion source
-  use { 'hrsh7th/nvim-cmp' } -- Completion
-  use { 'hrsh7th/cmp-nvim-lsp' } -- nvim-cmp source for neovim's built-in LSP
-  use { 'hrsh7th/cmp-buffer' } -- nvim-cmp source for buffer words
-  use { 'hrsh7th/cmp-path' } -- nvim-cmp source for path completion
+  use { 'hrsh7th/nvim-cmp' }            -- Completion
+  use { 'hrsh7th/cmp-nvim-lsp' }        -- nvim-cmp source for neovim's built-in LSP
+  use { 'hrsh7th/cmp-buffer' }          -- nvim-cmp source for buffer words
+  use { 'hrsh7th/cmp-path' }            -- nvim-cmp source for path completion
 
-  use { 'neovim/nvim-lspconfig' } -- LSP
-  use 'tpope/vim-commentary' -- comment handler
-  use 'karb94/neoscroll.nvim' -- smooth scrolling
+  use { 'neovim/nvim-lspconfig' }       -- LSP
+  use 'tpope/vim-commentary'            -- comment handler
+  use 'karb94/neoscroll.nvim'           -- smooth scrolling
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
-  use 'rcarriga/nvim-notify' -- Notifications
+  use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for Neovim's built-in LSP client
+  -- use 'rcarriga/nvim-notify' -- Notifications
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'wakatime/vim-wakatime' -- Monitor coding time
@@ -36,8 +36,8 @@ packer.startup(function(use)
   --   end,
   -- }
   use 'liuchengxu/vista.vim'
-
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use "lukas-reineke/indent-blankline.nvim" -- indent lines
+  use 'glepnir/lspsaga.nvim'                -- LSP UIs
   use 'L3MON4D3/LuaSnip'
   use {
     'nvim-treesitter/nvim-treesitter', -- highlighting, indentation, folding
@@ -73,7 +73,7 @@ packer.startup(function(use)
     }
   }
   -- use 'skywind3000/asyncrun.vim'
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
 
   use 'lewis6991/gitsigns.nvim'
   use { 'tpope/vim-fugitive', config = [[require('.fugitive')]] }

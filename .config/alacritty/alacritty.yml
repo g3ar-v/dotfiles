@@ -2,7 +2,7 @@
 # TERM: tmux-256color
 
 #decorations: buttonless
-use_thin_strokes: false
+use_thin_strokes: true
 anti-aliasing: none
 visual_bell.duration: 0
 unfocused_hollow: true
@@ -18,7 +18,8 @@ font:
   normal:
     family: FiraCode Nerd Font
     #family: Hack Nerd Font
-    style: Regular
+    style: Retina
+    # style:
   bold:
     family: FiraCode Nerd Font
     #family: Hack Nerd Font
@@ -28,105 +29,21 @@ font:
     #family: Hack Nerd Font
     style: Italic
   bold_italic:
+    # <<<<<<< Updated upstream
     family: FiraCode Nerd Font
     style: Bold Italic
-  size: 12.0
+  size: 10.0
 draw_bold_text_with_bright_colors: true
 
 #######################################
 ##      START OF COLOR SCHEMES       ##
 #######################################
 schemes:
-  ### Doom One ###
-  DoomOne: &DoomOne
-    primary:
-      background: "#282c34"
-      foreground: "#bbc2cf"
-    cursor:
-      text: CellBackground
-      cursor: "#528bff"
-    selection:
-      text: CellForeground
-      background: "#3e4451"
-    normal:
-      black: "#1c1f24"
-      red: "#ff6c6b"
-      green: "#98be65"
-      yellow: "#da8548"
-      blue: "#51afef"
-      magenta: "#c678dd"
-      cyan: "#5699af"
-      white: "#202328"
-    bright:
-      black: "#5b6268"
-      red: "#da8548"
-      green: "#4db5bd"
-      yellow: "#ecbe7b"
-      blue: "#3071db" # This is 2257a0 in Doom Emacs but I lightened it.
-      magenta: "#a9a1e1"
-      cyan: "#46d9ff"
-      white: "#dfdfdf"
-
-  ### Dracula ###
-  Dracula: &Dracula
-    primary:
-      background: "#282a36"
-      foreground: "#f8f8f2"
-    cursor:
-      text: CellBackground
-      cursor: CellForeground
-    vi_mode_cursor:
-      text: CellBackground
-      cursor: CellForeground
-    search:
-      matches:
-        foreground: "#44475a"
-        background: "#50fa7b"
-      focused_match:
-        foreground: "#44475a"
-        background: "#ffb86c"
-      bar:
-        background: "#282a36"
-        foreground: "#f8f8f2"
-    line_indicator:
-      foreground: None
-      background: None
-    selection:
-      text: CellForeground
-      background: "#44475a"
-    normal:
-      black: "#000000"
-      red: "#ff5555"
-      green: "#50fa7b"
-      yellow: "#f1fa8c"
-      blue: "#bd93f9"
-      magenta: "#ff79c6"
-      cyan: "#8be9fd"
-      white: "#bfbfbf"
-    bright:
-      black: "#4d4d4d"
-      red: "#ff6e67"
-      green: "#5af78e"
-      yellow: "#f4f99d"
-      blue: "#caa9fa"
-      magenta: "#ff92d0"
-      cyan: "#9aedfe"
-      white: "#e6e6e6"
-    dim:
-      black: "#14151b"
-      red: "#ff2222"
-      green: "#1ef956"
-      yellow: "#ebf85b"
-      blue: "#4d5b86"
-      magenta: "#ff46b0"
-      cyan: "#59dffc"
-      white: "#e6e6d1"
-
   ### Gruvbox dark ###
   GruvboxDark: &GruvboxDark # Default colors
     primary:
       # hard contrast: background = '0x1d2021'
-      background: "#282828"
+      background: "#262626"
       # soft contrast: background = '0x32302f'
       foreground: "#ebdbb2"
 
@@ -398,8 +315,8 @@ cursor:
   unfocused_hollow: true
 
 dynamic_title: true
-
+live_config_reload: true
 #key bindings
 key_bindings:
-  - { key: V, mods: Control|Shift, action: Paste }
-  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: V, mods: super, action: Paste }
+  - { key: C, mods: super, action: Copy }

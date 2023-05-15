@@ -5,7 +5,8 @@ require("gruvbox").setup({
   overrides = {
     Function = { link = "GruvboxAqua" },
     Operator = { link = "GruvboxAqua" },
-    Special = { link = "GruvboxPurple" }
+    Special = { link = "GruvboxPurple" },
+    String = { link = "GruvboxYellow" }
   }
 })
 vim.cmd("colorscheme gruvbox")
