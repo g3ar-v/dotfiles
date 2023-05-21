@@ -32,9 +32,7 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 | `<leader>t`    | Normal        | show help tags                                                   | telescope.nvim | Linux/macOS |
 | `<leader>e`    | Normal        | show diagnostics telescope.nvim                                  | telescope.nvim | Linux/macOS |
 | `tt`           | Normal        | open a terminal in a telescope window                            | telescope.nvim | Linux/macOS |
-| `<leader>v`    | Normal        | Reselect last pasted text                                        |                | Linux/macOS |
-| `<leader>ev`   | Normal        | Edit Nvim config in a new tabpage                                |                | Linux/macOS |
-| `<leader>sv`   | Normal        | Reload Nvim config                                               |                | Linux/macOS |
+| `<leader>v`    | Normal        | Open Vista bar                                                   | vista.nvim     | Linux/macOS |
 | `<leader>st`   | Normal        | Show highlight group for cursor text                             |                | Linux/macOS |
 | `<leader>q`    | Normal        | Quit current window                                              |                | Linux/macOS |
 | `<leader>Q`    | Normal        | Quit all window and close Nvim                                   |                | Linux/macOS |
@@ -42,7 +40,6 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 | `<leader>y`    | Normal        | Copy the content of entire buffer to default register            |                | Linux/macOS |
 | `<leader>cl`   | Normal        | Toggle cursor column                                             |                | Linux/macOS |
 | `<leader>cd`   | Normal        | Change current working directory to to the dir of current buffer |                | Linux/macOS |
-| `<space>t`     | Normal        | Toggle tag window (show project tags in the right window)        |                | Linux/macOS |
 | `<leader>gs`   | Normal        | Show Git status result                                           | vim-fugitive   | Linux/macOS |
 | `<leader>gw`   | Normal        | Run Git add for current file                                     | vim-fugitive   | Linux/macOS |
 | `<leader>gd`   | Normal        | Run git diff for current file                                    | vim-fugitive   | Linux/macOS |

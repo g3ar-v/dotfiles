@@ -3,24 +3,28 @@ if (not status) then return end
 
 saga.setup({
   ui = {
-    winblend = 10,
+    winblend = 0,
     border = 'rounded',
     colors = {
       normalbg = '#282828'
     }
+  },
+  symbol_in_winbar = {
+    enable = true
   }
 })
 
-local diagnostics = require("lspsaga.diagnostic")
+local diagnostic = require("lspsaga.diagnostic")
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
 vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('n', 'go', '<Cmd>Lspsaga outline<CR>', opts)
 vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 vim.keymap.set('n', 'ga', '<Cmd>Lspsaga code_action<CR>', { silent = true })
-vim.keymap.set('n', 't', '<Cmd>Lspsaga term_toggle<CR>', { silent = true })
+-- vim.keymap.set('n', 't', '<Cmd>Lspsaga term_toggle<CR>', { silent = true })
 
 -- code action
 local codeaction = require("lspsaga.codeaction")
