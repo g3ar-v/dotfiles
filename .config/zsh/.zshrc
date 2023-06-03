@@ -1,5 +1,3 @@
-export ZSH=$HOME/.config/zsh
-
 if [[ "$OSTYPE" == "darwin"* ]] ; then
   source $ZSH/darwin.sh
 fi
