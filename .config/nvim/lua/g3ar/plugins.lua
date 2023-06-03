@@ -28,7 +28,13 @@ packer.startup(function(use)
   use { "rafamadriz/friendly-snippets" }
 
   -- LSP
-  use { 'neovim/nvim-lspconfig' }
+  use { 'neovim/nvim-lspconfig' }       -- LSP
+  use 'tpope/vim-commentary'            -- comment handler
+  use 'karb94/neoscroll.nvim'           -- smooth scrolling
+  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+  use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for Neovim's built-in LSP client
+  use 'rcarriga/nvim-notify'            -- Notifications
+  use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'     -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'glepnir/lspsaga.nvim'                -- LSP UIs
@@ -53,7 +59,7 @@ packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  vim.g.mkdp_browser = '/usr/bin/firefox'
+  -- vim.g.mkdp_browser = '/usr/bin/firefox'
   use 'akinsho/nvim-bufferline.lua'
   use {
     "ThePrimeagen/refactoring.nvim",
@@ -62,7 +68,13 @@ packer.startup(function(use)
       { "nvim-treesitter/nvim-treesitter" }
     }
   }
+  use 'lervag/vimtex'
+  vim.g.vimtex_view_method = 'skim'
+  vim.g.vimtex_view_skim_sync = 1
+  vim.g.vimtex_view_skim_activate = 1
+
   -- use 'github/copilot.vim'
+  --
 
   -- Git Functions
   use 'lewis6991/gitsigns.nvim'

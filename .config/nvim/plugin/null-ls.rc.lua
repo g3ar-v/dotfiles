@@ -18,7 +18,13 @@ null_ls.setup {
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.code_actions.shellcheck,
     null_ls.builtins.formatting.ruff,
-    -- null_ls.builtins.formatting.shfmt,
+    null_ls.builtins.code_actions.proselint,
+    null_ls.builtins.diagnostics.proselint,
+    null_ls.builtins.formatting.latexindent,
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.diagnostics.eslint_d.with({
+      diagnostics_format = '[eslint] #{m}\n(#{c})'
+    }),
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
