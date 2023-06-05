@@ -67,7 +67,7 @@
   alias connect="ssh richard@192.168.100.97"
   alias tree="tree -C"
   alias g="git"
-  alias gdir='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+  alias gdir='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
   
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   

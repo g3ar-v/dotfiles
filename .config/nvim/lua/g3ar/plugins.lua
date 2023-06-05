@@ -29,7 +29,6 @@ packer.startup(function(use)
 
   -- LSP
   use { 'neovim/nvim-lspconfig' }       -- LSP
-  use 'tpope/vim-commentary'            -- comment handler
   use 'karb94/neoscroll.nvim'           -- smooth scrolling
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for Neovim's built-in LSP client
