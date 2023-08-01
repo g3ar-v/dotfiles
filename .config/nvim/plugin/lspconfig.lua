@@ -90,7 +90,7 @@ nvim_lsp.lua_ls.setup {
 
 nvim_lsp.jsonls.setup {
   capabilities = capabilities,
-  cmd = { "vscode-json-language-server", "--stdio" },
+  cmd = { "vscode-json-languageserver", "--stdio" },
   filetypes = { "json", "conf", "jsonc" },
   provideFormatter = true
 }
