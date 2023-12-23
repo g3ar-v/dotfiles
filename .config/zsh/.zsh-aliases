@@ -1,6 +1,14 @@
 #!/bin/sh
+## Aliases
+alias ll="exa -l -g --icons"
+alias lla="exa -l -g -a --icons --sort name"
+alias tree="tree -C"
+alias g="git"
+alias ceconfig='core-config edit user'
+alias cra='core-start all restart'
+alias crs='core-start skills restart'
+alias crv='core-start voice restart'
+alias craudio='core-start audio restart'
+alias gdir='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias warmachine='ssh g3ar@192.168.100.180'
 
-#if [[ type -q exa ]]; then
-  alias ll="exa -l -g --icons"
-  alias lla="ll -a"
-#fi

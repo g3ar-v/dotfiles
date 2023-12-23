@@ -1,5 +1,24 @@
-# Fig pre block. Keep at the top of this file.
 export ZSH="$HOME/.config/zsh"
+GREEN="$(tput setaf 2)"
+BLUE="$(tput setaf 4)"
+CYAN="$(tput setaf 6)"
+YELLOW="$(tput setaf 3)"
+RESET="$(tput sgr0)"
+        
+echo -e " ${CYAN}
+     ██████╗ ██████╗  █████╗ ██████╗ 
+    ██╔════╝ ╚════██╗██╔══██╗██╔══██╗
+    ██║  ███╗ █████╔╝███████║██████╔╝
+    ██║   ██║ ╚═══██╗██╔══██║██╔══██╗
+    ╚██████╔╝██████╔╝██║  ██║██║  ██║
+     ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+                                     
+"
+echo -e "${RESET}"
+
+export EDITOR="nvim"
+export PAGER="most"
+export HISTFILE=$HOME/.config/zsh/.zsh_history
 
 # set default prompt if zsh config can't be found   
 # [[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"
