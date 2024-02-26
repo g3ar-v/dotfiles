@@ -1,5 +1,6 @@
 return {
   { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
+  { "nvim-treesitter/nvim-treesitter-textobjects" },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -24,6 +25,22 @@ return {
         enable = true,
         use_virtual_text = true,
         lint_events = { "BufWrite", "CursorHold" },
+      },
+
+      textobjects = {
+        move = {
+          enable = true,
+          set_jumps = true,
+          -- Below will go to either the start or the end, whichever is closer.
+          -- Use if you want more granular movements
+          -- Make it even more gradual by adding multiple queries and regex.
+          goto_next = {
+            ["]n"] = "@conditional.outer",
+          },
+          goto_previous = {
+            ["[n"] = "@conditional.outer",
+          },
+        },
       },
 
       playground = {

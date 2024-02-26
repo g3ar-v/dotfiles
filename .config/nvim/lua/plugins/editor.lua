@@ -7,6 +7,7 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
+  { "folke/flash.nvim", enabled = false },
   {
     "stevearc/conform.nvim",
     opts = {},
@@ -17,6 +18,19 @@ return {
   -- wakatime
   { "wakatime/vim-wakatime" },
 
+  -- git
+  {
+    "dinhhuy258/git.nvim",
+    event = "BufReadPre",
+    opts = {
+      keymaps = {
+        -- Open blame window
+        blame = "<Leader>gb",
+        -- Open file/folder in git repository
+        browse = "<Leader>go",
+      },
+    },
+  },
   { "norcalli/nvim-colorizer.lua" },
   {
     "telescope.nvim",
