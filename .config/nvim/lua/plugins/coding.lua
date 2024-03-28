@@ -87,8 +87,8 @@ return {
   },
   {
     "nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    opt = function(_, opts)
+    dependencies = {  "hrsh7th/cmp-emoji"   },
+    opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
     end,
   },

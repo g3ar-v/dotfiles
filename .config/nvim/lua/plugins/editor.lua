@@ -8,10 +8,13 @@ return {
     end,
   },
   { "folke/flash.nvim", enabled = false },
-  {
-    "stevearc/conform.nvim",
-    opts = {},
-  },
+
+  -- {
+  --   "stevearc/conform.nvim",
+  --   enabled = false,
+  --   opts = {},
+  -- },
+
   -- latex
   { "lervag/vimtex" },
 
@@ -31,7 +34,18 @@ return {
       },
     },
   },
-  { "norcalli/nvim-colorizer.lua" },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    -- optionally, override the default options:
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+    end,
+    -- config = true,
+  },
+  -- TODO: automatically attach to buffer
+  { "norcalli/nvim-colorizer.lua", opts = {} },
   {
     "telescope.nvim",
     dependencies = {

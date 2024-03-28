@@ -1,4 +1,13 @@
 return {
+
+  { "rcarriga/nvim-notify", opts = {
+    timeout = 5000,
+    background_colour = "#282828",
+  } },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   event = "VeryLazy",
+  -- },
   -- notifications
   {
     "folke/noice.nvim",
@@ -21,19 +30,31 @@ return {
       opts.presets.lsp_doc_border = true
     end,
   },
-  -- gruvbox
+  -- gruvbox theme
   {
     "ellisonleao/gruvbox.nvim",
     opts = {
+      transparent_mode = true,
       overrides = {
         Function = { link = "GruvboxAqua" },
         Operator = { link = "GruvboxAqua" },
         Special = { link = "GruvboxPurple" },
-        String = { link = "GruvboxYellow" },
+        -- String = { fg = "GruvboxDarkYellow" },
+        Comment = { fg = "#958a79" },
       },
     },
   },
 
+  -- miasma theme
+  -- {
+  --   "xero/miasma.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   transparent = true,
+  --   config = function()
+  --     vim.cmd("colorscheme miasma")
+  --   end,
+  -- },
   -- filename
   {
     "b0o/incline.nvim",
