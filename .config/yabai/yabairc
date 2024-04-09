@@ -14,10 +14,10 @@ sudo yabai --load-sa
 # global settings
 # yabai -m config window_border on
 yabai -m config mouse_follows_focus on
-yabai -m config focus_follows_mouse on
+yabai -m config focus_follows_mouse autofocus
 yabai -m config window_placement second_child
 # yabai -m config window_topmost               off
-yabai -m config window_shadow on
+yabai -m config window_shadow float
 # yabai -m config window_opacity on
 # yabai -m config window_opacity_duration 0.0
 # yabai -m config active_window_opacity 0.7
@@ -35,18 +35,18 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
 
-yabai -m config layout bsp
-yabai -m config top_padding 2
-yabai -m config bottom_padding 2
-yabai -m config left_padding 2
-yabai -m config right_padding 2
+yabai -m config layout float
+yabai -m config top_padding 3
+yabai -m config bottom_padding 4
+yabai -m config left_padding 3
+yabai -m config right_padding 3
 yabai -m config window_gap 6
 
 ## Default spaces
 
 # Space 1 Terminal
-# yabai -m config --space 1 layout bsp
-# yabai -m rule --add app="Cursor" space=1
+yabai -m config --space 1 layout bsp
+yabai -m rule --add app="Min" space=1
 
 # # Space 2 Research
 # yabai -m config --space 2 layout bsp
@@ -54,9 +54,9 @@ yabai -m config window_gap 6
 # yabai -m rule --add app="Spotify" space=2
 # yabai -m rule --add app="LM Studio" space=2
 
-# Space 3 Objectives
-# yabai -m config --space 3 layout bsp
-# yabai -m rule --add app="Firefox" space=3
+# Space 3 Web browser
+yabai -m config --space 3 layout stack
+yabai -m rule --add app="Arc Browser" space=3
 
 # # Space 4 Research Web browser
 # yabai -m config --space 4 layout bsp
@@ -67,15 +67,16 @@ yabai -m config window_gap 6
 # # yabai -m rule --add app="jamovi" space=4
 # # yabai -m rule --add app="QGIS" space=4
 
-# Space 5 Coding Workspace
-# yabai -m config --space 5 layout stack
+Space 5 Coding Workspace
+yabai -m config --space 5 layout stack
 # yabai -m rule --add app="Parallels Desktop" space=5
 # yabai -m rule --add app="Hyper" space=5
+# yabai -m rule --add app="Iterm" space=5
 # yabai -m rule --add app="Notion" opacity=0.95
 # yabai -m rule --add app="Calendar" space=5
 
-# Space 6 Terminal
-# yabai -m rule --add app="Alacritty"     space=1
+# Space 6 IDE
+yabai -m rule --add app="Cursor" space=6
 
 # yabai -m rule --add app="Microsoft Word"     space=2
 # yabai -m rule --add app="Microsoft PowerPoint"     space=2

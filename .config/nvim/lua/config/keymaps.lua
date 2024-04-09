@@ -1,6 +1,9 @@
 -- Keymaps are automaticalbashly loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+local discipline = require("g3ar.discipline")
+discipline.cowboy()
+
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -44,8 +47,8 @@ keymap.set("n", "<S-l>", "20zl") -- Scroll horizontally left
 keymap.set("n", "<S-h>", "20zh") -- Scroll horizontally right
 
 -- Split window
-keymap.set("n", "<Leader>ss", ":split<Return><C-w>w")
-keymap.set("n", "<Leader>sv", ":vsplit<Return><C-w>w")
+-- keymap.set("n", "<Leader>ss", ":split<Return><C-w>w")
+-- keymap.set("n", "<Leader>sv", ":vsplit<Return><C-w>w")
 
 -- Move window
 -- keymap.set("n", "<Space>", "<C-w>w")

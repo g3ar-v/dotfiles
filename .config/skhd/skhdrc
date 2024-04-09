@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Restart sketchybar
-# lalt + ctrl + shift - b : brew services restart sketchybar
-
 # Restart yabai
 lalt + ctrl + shift - w : yabai --restart-service
 
@@ -64,6 +61,11 @@ rcmd + ctrl - r: yabai -m space --rotate 90
 # mirror tree y-axis
 rcmd + ctrl - y: yabai -m space --mirror y-axis
 
+# toggle window native fullscreen
+shift + rcmd - f : yabai -m window --toggle native-fullscreen
+
+# toggle window fullscreen zoom
+rcmd - f : yabai -m window --focus mouse && yabai -m window --toggle zoom-fullscreen
 # decrease window size
 # rcmd + alt - s : yabai -m window --resize bottom:0:-20
 # rcmd + cmd - w : yabai -m window --resize top:0:20
@@ -74,16 +76,12 @@ rcmd + alt + shift - l : yabai -m window --resize right:-20:0
 rcmd + alt + shift - j : yabai -m window --resize top:0:20
 rcmd + alt + shift - k : yabai -m window --resize top:0:-20
 
-# # move floating window
+# move floating window
 rcmd + shift - h : yabai -m window --resize left:-50:0 && yabai -m window --resize right:-50:0
 rcmd + shift - j : yabai -m window --resize bottom:0:50 && yabai -m window --resize top:0:50
 rcmd + shift - k : yabai -m window --resize top:0:-50 && yabai -m window --resize bottom:0:-50
 rcmd + shift - l : yabai -m window --resize right:50:0 && yabai -m window --resize left:50:0
 
-# toggle sticky(+float), picture-in-picture
-rcmd - p : yabai -m window --toggle sticky --toggle pip
-#
-## create and destroy space
 # create a new space and follow focus
 rcmd + ctrl - n : yabai -m space --create && index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && yabai -m space --focus "${index}"
 # create a new space, move window and follow focus
@@ -112,10 +110,6 @@ rcmd - t : yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:2
 # float / unfloat bigger window and  center on screen
 rcmd - u : yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:4
 
-# open apps
-rcmd - n : open -n -a Finder
-
-# rcmd - return : open -n -a Kitty ; yabai -m space --focus 6
 rcmd - return : open -n -a Hyper
 
 # rcmd - w : `open -a Microsoft\ Word #; yabai -m space --focus 2
