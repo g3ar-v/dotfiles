@@ -1,1 +1,0 @@
-/Users/g3ar/.config/hyper/.hyper.js
