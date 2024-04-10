@@ -9,14 +9,14 @@ fi
 
 # Make sure $ZSH_CACHE_DIR is writable, otherwise use a directory in $HOME
 if [[ ! -w "$ZSH_CACHE_DIR" ]]; then
-  ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+  ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 fi
 
 # Create cache and completions dir and add to $fpath
 mkdir -p "$ZSH_CACHE_DIR/completions"
 (( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
 
-# Initializes Oh My Zsh
+# Initializes Zsh
 
 # add a function path
 fpath=($ZSH/functions $ZSH/completions $fpath)
@@ -43,17 +43,8 @@ is_plugin() {
 for plugin ($plugins); do
   if is_plugin $ZSH_CUSTOM $plugin; then
     fpath=($ZSH_CUSTOM/plugins/$plugin $fpath)
-  elif is_plugin $ZSH $plugin; then
-    fpath=($ZSH/plugins/$plugin $fpath)
   else
-    echo "[oh-my-zsh] plugin '$plugin' not found"
-    if test "$plugin" = "zsh-autosuggestions"; then
-      cd $ZSH/plugins/
-      git clone "https://github.com/zsh-users/zsh-autosuggestions.git"
-    elif test $plugin = "zsh-syntax-highlighting"; then
-      cd $ZSH/plugins/
-      git clone "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    fi
+    fpath=($ZSH/plugins/$plugin $fpath)
   fi
 done
 

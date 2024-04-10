@@ -1,7 +1,7 @@
 #!/bin/sh
 ## Aliases
-alias ll="exa -l -g --icons"
-alias lla="exa -l -g -a --icons --sort name"
+alias ll="eza -l -g --icons"
+alias lla="eza -l -g -a --icons --sort name"
 alias tree="tree -C"
 alias g="git"
 alias ceconfig='core-config edit user'
