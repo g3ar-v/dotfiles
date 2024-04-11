@@ -1,0 +1,21 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "base_keymap": "VSCode",
+  "theme": "Gruvbox Dark Soft",
+  "vim_mode": true,
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "buffer_font_family": "FiraCode Nerd Font",
+  "ui_font_family": "FiraCode Nerd Font",
+  "relative_line_numbers": true,
+  "wrap_guides": [88],
+  "preferred_line_length": 88,
+  "show_wrap_guides": true
+}
