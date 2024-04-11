@@ -47,5 +47,5 @@ ZSH_THEME="agnoster"
 plugins=(copypath zsh-z zsh-vi-mode shrink-path zsh-autosuggestions fast-syntax-highlighting)
 
 source $ZSH/.zsh-aliases
-source $ZSH/oh-my-zsh.sh
+source $ZSH/utility.sh
 
