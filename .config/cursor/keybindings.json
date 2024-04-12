@@ -1,1 +1,62 @@
-/Users/tesla/Library/Application Support/Cursor/User/keybindings.json
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": ", shift+\\",
+    "command": "workbench.action.splitEditorRight",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.focusRightGroup"
+  },
+  {
+    "key": "ctrl+w h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": ", -",
+    "command": "workbench.action.splitEditorDown",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "tab",
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "; ;",
+    "command": "workbench.action.showCommands",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "; f",
+    "command": "workbench.action.quickOpen",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "\\ \\",
+    "command": "workbench.action.showAllEditors",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "g s",
+    "command": "workbench.action.gotoSymbol",
+    "when": "editorFocus && vim.mode == 'Normal' && !accessibilityHelpIsShown && !accessibleViewIsShown"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol",
+    "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+  }
+]
+

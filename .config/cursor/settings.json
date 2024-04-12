@@ -1,1 +1,50 @@
-/Users/tesla/Library/Application Support/Cursor/User/settings.json
+{
+  "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "color-highlight.markRuler": false,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.guides.highlightActiveBracketPair": false,
+  "editor.guides.bracketPairsHorizontal": false,
+  "editor.guides.indentation": true,
+  // "editor.guides.highlightActiveIndentation": "always",
+
+  // "editor.renderLineHighlight": "none",
+  "editor.glyphMargin": false,
+  "editor.lineNumbers": "off",
+  "editor.showFoldingControls": "never",
+
+  "breadcrumbs.enabled": true,
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+
+  "vim.smartRelativeLine": true,
+  "vim.leader": ",",
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": "#363537",
+  "vim.statusBarColors.insert": "#567189",
+  "vim.statusBarColors.replace": "#A89984",
+  "vim.statusBarColors.visual": "#D87B21",
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
+  "material-icon-theme.hidesExplorerArrows": true,
+
+  "python.languageServer": "Pylance",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#363537",
+    "statusBar.noFolderBackground": "#363537",
+    "statusBar.debuggingBackground": "#363537",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+}
+}
+
