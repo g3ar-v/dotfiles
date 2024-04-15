@@ -1,7 +1,6 @@
-
 typeset -g MULTILINE_FIRST_PROMPT_PREFIX='%242F╭─'
 typeset -g MULTILINE_NEWLINE_PROMPT_PREFIX='%242F├─'
-typeset -g MULTILINE_LAST_PROMPT_PREFIX='%242F╰─'
+typeset -g MULTILINE_LAST_PROMPT_PREFIX='%242F└─'
 CURRENT_BG='NONE'
 
 case ${SOLARIZED_THEME:-dark} in
@@ -13,10 +12,11 @@ esac
 
 () {
   local LC_ALL="" LC_CTYPE="en_US.UTF-8"
- # SEGMENT_SEPARATOR=$'\uE0C0' #fiery
+  SEGMENT_SEPARATOR2=$'\uE0C0' #fiery
   SEGMENT_SEPARATOR1=$'\uE0c4' # lego
+  SEGMENT_SEPARATOR3=$'\uE0c6' # big lego
 
-  SEGMENT_SEPARATOR=$'\uE0b1'
+  SEGMENT_SEPARATOR=$'\uE0b1' # thin angle
 
 }
 
@@ -28,7 +28,7 @@ prompt_segment() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR1%{$fg%} "
+    echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR3%{$fg%} "
   else
     echo -n "%{$bg%}%{$fg%} "
   fi
@@ -39,8 +39,8 @@ prompt_segment() {
 # End the prompt, closing any open segments
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
- $"
+    # echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%f \n%F{gray%}└─$"
+    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%f \n%F{white}$MULTILINE_LAST_PROMPT_PREFIX$ "
   else
     echo -n "%{%k%}"
   fi
@@ -57,7 +57,7 @@ PROMPT='$(build_prompt)'
 
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+    prompt_segment black blue "%(!.%{%F{yellow}%}.)%n %F{white}$SEGMENT_SEPARATOR"
   fi
 }
 
@@ -197,7 +197,7 @@ build_prompt() {
   RETVAL=$?
   
   prompt_status
-  prompt_aws
+  # prompt_aws
   prompt_context
   prompt_conda
   prompt_virtualenv
