@@ -7,9 +7,9 @@
     </a></p>
 </div>
 
-![zsh-screenshot](./images/screenshot-zsh.png)
+![zsh-screenshot](./.config/images/screenshot-zsh.png)
 
-![neovim-screenshot](./images/screenshot-nvim.png)
+![neovim-screenshot](./.config/images/screenshot-nvim.png)
 
 # My dotfile setup
 
