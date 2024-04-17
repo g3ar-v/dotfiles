@@ -28,3 +28,11 @@ of programs both used on Linux/macOS and other operating systems.
 - [z](https://github.com/rupa/z.git) - directory jumping
 - [Eza](https://github.com/eza-community/eza) - `ls` replacement
 - [Gruvbox](https://github.com/morhetz/gruvbox.git) - gruvbox for shell theme.
+
+## Loading iTerm2 preference
+
+- In iTerm2, navigate to the Preferences window (iTerm2 > Preferences) and go to the General tab.
+- Towards the bottom of the window, check the option "Load preferences from a custom folder or URL".
+- Set, save changes to manually.
+- Upon restarting iTerm2, preference changes should update.
+- Now set save changes to automatically or you choice.
