@@ -9,5 +9,6 @@ alias crcore='vasco-start core restart'
 alias crl='vasco-start listener restart'
 alias craudio='vasco-start audio restart'
 alias g='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cav='conda activate vasco'
 alias warmachine='ssh g3ar@192.168.100.180'
 

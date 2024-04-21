@@ -40,7 +40,7 @@ prompt_segment() {
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
     # echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%f \n%F{gray%}└─$"
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%f \n%F{white}$MULTILINE_LAST_PROMPT_PREFIX$ "
+    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR2%f \n%F{white}$MULTILINE_LAST_PROMPT_PREFIX$ "
   else
     echo -n "%{%k%}"
   fi
@@ -57,7 +57,7 @@ PROMPT='$(build_prompt)'
 
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black blue "%(!.%{%F{yellow}%}.)%n %F{white}$SEGMENT_SEPARATOR"
+    prompt_segment black white "%(!.%{%F{yellow}%}.)%n %F{white}$SEGMENT_SEPARATOR"
   fi
 }
 
