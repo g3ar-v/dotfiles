@@ -21,17 +21,17 @@
   {
     "key": "shift+tab",
     "command": "workbench.action.previousEditorInGroup",
-    "when": "editorTextFocus && vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal'"
   },
   {
     "key": "tab",
     "command": "workbench.action.nextEditorInGroup",
-    "when": "editorTextFocus && vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal'"
   },
   {
     "key": "shift+k",
     "command": "editor.action.showHover",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus && vim.mode != 'Insert'"
   },
   {
     "key": "; ;",
@@ -44,19 +44,53 @@
     "when": "editorFocus && vim.mode == 'Normal'"
   },
   {
+    "key": ", g shift+r",
+    "command": "editor.action.goToReferences",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
     "key": "\\ \\",
     "command": "workbench.action.showAllEditors",
     "when": "editorFocus && vim.mode == 'Normal'"
   },
   {
-    "key": "g s",
+    "key": ", s",
     "command": "workbench.action.gotoSymbol",
-    "when": "editorFocus && vim.mode == 'Normal' && !accessibilityHelpIsShown && !accessibleViewIsShown"
+    "when": "editorTextFocus && editorFocus && vim.mode != 'Insert' && !accessibilityHelpIsShown && !accessibleViewIsShown"
+  },
+  {
+    "key": ", e",
+    "command": "workbench.view.explorer",
+    "when": "editorTextFocus && (explorerViewletFocus || vim.mode == 'Normal')"
+  },
+  {
+    "key": ", g r",
+    "command": "editor.action.rename",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+l",
+    "command": "scrollRight",
+    "when": "editorTextFocus && vim.mode == 'Normal' && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+h",
+    "command": "scrollLeft",
+    "when": "editorTextFocus && vim.mode == 'Normal' && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
   },
   {
     "key": "shift+cmd+o",
     "command": "-workbench.action.gotoSymbol",
     "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+  },
+  {
+    "key": "f8",
+    "command": "-editor.action.marker.nextInFiles",
+    "when": "editorFocus"
   }
 ]
-

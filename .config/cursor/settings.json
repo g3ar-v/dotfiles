@@ -5,7 +5,7 @@
   "editor.overviewRulerBorder": false,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "color-highlight.markRuler": false,
+  "color-highlight.markRuler": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.bracketPairColorization.enabled": false,
@@ -13,38 +13,73 @@
   "editor.guides.bracketPairsHorizontal": false,
   "editor.guides.indentation": true,
   // "editor.guides.highlightActiveIndentation": "always",
-
   // "editor.renderLineHighlight": "none",
   "editor.glyphMargin": false,
-  "editor.lineNumbers": "off",
   "editor.showFoldingControls": "never",
-
-  "breadcrumbs.enabled": true,
+  "editor.wordWrapColumn": 88,
+  "editor.rulers": [
+    {
+      "column": 88,
+    }
+  ],
   "workbench.colorTheme": "Gruvbox Dark Medium",
-
-  "vim.smartRelativeLine": true,
+  "workbench.tree.renderIndentGuides": "onHover",
   "vim.leader": ",",
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.normal": "#363537",
   "vim.statusBarColors.insert": "#567189",
-  "vim.statusBarColors.replace": "#A89984",
+  "vim.statusBarColors.replace": "#804674",
   "vim.statusBarColors.visual": "#D87B21",
-
+  "vim.statusBarColors.searchinprogressmode": "#76885B",
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": null
   },
-
   "material-icon-theme.hidesExplorerArrows": true,
-
-  "python.languageServer": "Pylance",
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.pytestParameters": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#363537",
     "statusBar.noFolderBackground": "#363537",
     "statusBar.debuggingBackground": "#363537",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
+  },
+  "vim.scroll": 8,
+  "terminal.integrated.inheritEnv": false,
+  "editor.lineHeight": 1.8,
+  "window.commandCenter": false,
+  "breadcrumbs.enabled": false,
+  "vim.smartRelativeLine": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.accessibilitySupport": "off",
+  "vim.useSystemClipboard": true,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.renderWhitespace": "trailing",
+  "svelte.enable-ts-plugin": true,
+  "terminal.integrated.env.osx": {},
+  "console-ninja.featureSet": "Community",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.languageServer": "Pylance",
+  "[python]": {
+    
+    "editor.defaultFormatter":"charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports":"never"
+  },
+  "cody.autocomplete.enabled": true,
+  "git.autofetch": true,
+  "editor.minimap.enabled": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.ignoreRebaseWarning": true,
 }
-}
-
