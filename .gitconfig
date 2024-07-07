@@ -3,14 +3,11 @@
   name = victor
 [alias]
   a = add
-  b = branch
-  unstage = reset HEAD --
+  undo = reset --soft HEAD^
   d = diff
-  czc = cz commit
   co = checkout
   ss = status -s
   last = log -1 HEAD
-  open = "!hub browse"
 [credential]
 	helper = store
 [init]

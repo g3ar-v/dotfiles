@@ -2,7 +2,7 @@
   {
     "context": "vim_operator == none && !VimWaiting && vim_mode != insert",
     "bindings": {
-      "; ;": "tab_switcher::Toggle",
+      "; ;": "command_palette::Toggle",
       "; f": "file_finder::Toggle"
     }
   },
@@ -21,7 +21,7 @@
       "1 g shift-d": "editor::GoToImplementation",
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
-      "g shift-r": "editor::FindAllReferences",
+      ", g shift-r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
       "g a": "editor::ToggleCodeActions",
       "g r": "editor::Rename",
