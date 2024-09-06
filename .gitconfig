@@ -1,8 +1,12 @@
 [user]
 	email = vfranktor@gmail.com
   name = victor
+[core]
+  # Improve visibility for viewing diffs in terminal
+  pager = delta
 [alias]
   a = add
+  amend = commit --amend
   undo = reset --soft HEAD^
   d = diff
   co = checkout
